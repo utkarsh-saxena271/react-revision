@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { toast } from "react-toastify";
+import { todocontext } from "../context/TodoContext";
 
 const ShowTodo = (props) => {
-  const todo = props.todo;
-  const setTodo = props.setTodo;
+  const [todo, setTodo] = useContext(todocontext);
   const [completed, setCompleted] = useState(false);
   const clickHandler = (e,i)=>{
             setCompleted(e.target.checked);
