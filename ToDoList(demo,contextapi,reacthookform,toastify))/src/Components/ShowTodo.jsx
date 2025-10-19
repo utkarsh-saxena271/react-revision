@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { toast } from "react-toastify";
 
 const ShowTodo = (props) => {
   const todo = props.todo;
@@ -9,7 +10,9 @@ const ShowTodo = (props) => {
             const filteredTodo = todo.filter((val)=>{return val.id != i});
             setTimeout(() => {
               setTodo(filteredTodo);
+              toast.error("todo deleted")
             }, 300);
+
           }
   const renderTodo = todo.map((val) => {
     return (
